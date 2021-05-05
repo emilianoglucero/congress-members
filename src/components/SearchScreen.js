@@ -66,6 +66,9 @@ export const SearchScreen = ({ listOfMembers }) => {
     }
   };
 
+  const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
+  console.log(showAdvancedFilters);
+
   return (
     <div>
       <h1>Search Screen</h1>
@@ -95,95 +98,107 @@ export const SearchScreen = ({ listOfMembers }) => {
               Search...
             </button>
             <br />
-            <input
-              type="text"
-              placeholder="Find members by id"
-              name="searchTextByID"
-              autoComplete="off"
-              value={searchTextByID}
-              onChange={handleInputChange}
-            />
-
             <button
               onClick={(e) => {
-                handleSearch(e);
+                e.preventDefault();
+                setShowAdvancedFilters(!showAdvancedFilters);
               }}
-              name="search-text-by-id"
             >
-              Search...
+              Advanced Filters
             </button>
+            {showAdvancedFilters && (
+              <div className="advanced-filters">
+                <input
+                  type="text"
+                  placeholder="Find members by id"
+                  name="searchTextByID"
+                  autoComplete="off"
+                  value={searchTextByID}
+                  onChange={handleInputChange}
+                />
 
-            <input
-              type="text"
-              placeholder="Find members by name"
-              name="searchTextByFirstName"
-              autoComplete="off"
-              value={searchTextByFirstName}
-              onChange={handleInputChange}
-            />
+                <button
+                  onClick={(e) => {
+                    handleSearch(e);
+                  }}
+                  name="search-text-by-id"
+                >
+                  Search...
+                </button>
 
-            <button
-              onClick={(e) => {
-                handleSearch(e);
-              }}
-              name="search-text-by-firstname"
-            >
-              Search...
-            </button>
+                <input
+                  type="text"
+                  placeholder="Find members by name"
+                  name="searchTextByFirstName"
+                  autoComplete="off"
+                  value={searchTextByFirstName}
+                  onChange={handleInputChange}
+                />
 
-            <input
-              type="text"
-              placeholder="Find members by lastname"
-              name="searchTextByLastName"
-              autoComplete="off"
-              value={searchTextByLastName}
-              onChange={handleInputChange}
-            />
+                <button
+                  onClick={(e) => {
+                    handleSearch(e);
+                  }}
+                  name="search-text-by-firstname"
+                >
+                  Search...
+                </button>
 
-            <button
-              onClick={(e) => {
-                handleSearch(e);
-              }}
-              name="search-text-by-lastname"
-            >
-              Search...
-            </button>
+                <input
+                  type="text"
+                  placeholder="Find members by lastname"
+                  name="searchTextByLastName"
+                  autoComplete="off"
+                  value={searchTextByLastName}
+                  onChange={handleInputChange}
+                />
 
-            <input
-              type="text"
-              placeholder="Find members by gender"
-              name="searchTextByGender"
-              autoComplete="off"
-              value={searchTextByGender}
-              onChange={handleInputChange}
-            />
+                <button
+                  onClick={(e) => {
+                    handleSearch(e);
+                  }}
+                  name="search-text-by-lastname"
+                >
+                  Search...
+                </button>
 
-            <button
-              onClick={(e) => {
-                handleSearch(e);
-              }}
-              name="search-text-by-gender"
-            >
-              Search...
-            </button>
+                <input
+                  type="text"
+                  placeholder="Find members by gender"
+                  name="searchTextByGender"
+                  autoComplete="off"
+                  value={searchTextByGender}
+                  onChange={handleInputChange}
+                />
 
-            <input
-              type="text"
-              placeholder="Find members by party"
-              name="searchTextByParty"
-              autoComplete="off"
-              value={searchTextByParty}
-              onChange={handleInputChange}
-            />
+                <button
+                  onClick={(e) => {
+                    handleSearch(e);
+                  }}
+                  name="search-text-by-gender"
+                >
+                  Search...
+                </button>
 
-            <button
-              onClick={(e) => {
-                handleSearch(e);
-              }}
-              name="search-text-by-party"
-            >
-              Search...
-            </button>
+                <input
+                  type="text"
+                  placeholder="Find members by party"
+                  name="searchTextByParty"
+                  autoComplete="off"
+                  value={searchTextByParty}
+                  onChange={handleInputChange}
+                />
+
+                <button
+                  onClick={(e) => {
+                    handleSearch(e);
+                  }}
+                  name="search-text-by-party"
+                >
+                  Search...
+                </button>
+              </div>
+            )}
           </form>
         </div>
 
