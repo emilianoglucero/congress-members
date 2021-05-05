@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { getObjects } from "../helpers/getObjects";
 import { useForm } from "../hooks/useForm";
+import { CongressGrid } from "./ui/CongressGrid";
 
 export const SearchScreen = ({ listOfMembers }) => {
   console.log(listOfMembers);
@@ -76,9 +77,6 @@ export const SearchScreen = ({ listOfMembers }) => {
 
       <div>
         <div>
-          <h4> Search Form </h4>
-          <hr />
-
           <form>
             <input
               type="text"
@@ -203,11 +201,11 @@ export const SearchScreen = ({ listOfMembers }) => {
         </div>
 
         <div>
-          <h4> Results </h4>
+          <h4> Results: </h4>
           {filteredSearch.length === 0 ? (
             <p>No results</p>
           ) : (
-            filteredSearch.map((item) => <p>{item.id}</p>)
+            <CongressGrid listOfMembers={filteredSearch} />
           )}
           <hr />
         </div>

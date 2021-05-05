@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../styles/congress-list-screen.scss";
-import { CongressCard } from "./ui/CongressCard";
+import { CongressGrid } from "./ui/CongressGrid";
 
 export const CongressListScreen = ({ listOfMembers }) => {
   console.log(listOfMembers);
@@ -13,7 +13,7 @@ export const CongressListScreen = ({ listOfMembers }) => {
       </header>
       <main>
         <h3>List of congress persons:</h3>
-        <CongressCard listOfMembers={listOfMembers} />
+        <CongressGrid listOfMembers={listOfMembers?.results[0].members} />
       </main>
     </div>
   );
