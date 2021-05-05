@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route, HashRouter } from "react-router-dom";
 import { CongressDetailScreen } from "../components/CongressDetailScreen";
 import { CongressListScreen } from "../components/CongressListScreen";
 
@@ -21,7 +21,7 @@ export const AppRouter = () => {
         <div>Loading...</div>
       ) : (
         <div>
-          <Router>
+          <HashRouter>
             <Header />
             <div>
               <Switch>
@@ -36,7 +36,7 @@ export const AppRouter = () => {
                 </Route>
               </Switch>
             </div>
-          </Router>
+          </HashRouter>
           <Footer />
         </div>
       )}
