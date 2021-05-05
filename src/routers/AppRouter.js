@@ -1,10 +1,12 @@
 import React from "react";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { CongressDetailScreen } from "../components/CongressDetailScreen";
 import { CongressListScreen } from "../components/CongressListScreen";
 
 import { SearchScreen } from "../components/SearchScreen";
+import { Footer } from "../components/ui/Footer";
+import { Header } from "../components/ui/Header";
 import { useFetch } from "../hooks/useFetch";
 import "../styles/navbar.scss";
 
@@ -22,18 +24,8 @@ export const AppRouter = () => {
       ) : (
         <div>
           <Router>
+            <Header />
             <div>
-              <nav className="header">
-                <ul>
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link to="/search">Search</Link>
-                  </li>
-                </ul>
-              </nav>
-
               <Switch>
                 <Route path="/search">
                   <SearchScreen listOfMembers={data} />
@@ -47,6 +39,7 @@ export const AppRouter = () => {
               </Switch>
             </div>
           </Router>
+          <Footer />
         </div>
       )}
     </>
