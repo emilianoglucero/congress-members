@@ -13,10 +13,8 @@ import "../styles/navbar.scss";
 export const AppRouter = () => {
   const url = "https://api.propublica.org/congress/v1/102/house/members.json";
 
-  const { loading, data, error } = useFetch(url);
-  console.log(loading);
-  console.log(error);
-  console.log(data);
+  const { loading, data } = useFetch(url);
+
   return (
     <>
       {loading ? (

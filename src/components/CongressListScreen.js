@@ -1,11 +1,9 @@
 import React from "react";
 
-import "../styles/congress-list-screen.scss";
 import { CongressGrid } from "./ui/CongressGrid";
+import "../styles/congress-list-screen.scss";
 
 export const CongressListScreen = ({ listOfMembers }) => {
-  console.log(listOfMembers);
-
   return (
     <div className="App">
       <header>

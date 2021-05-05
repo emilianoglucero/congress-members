@@ -33,7 +33,7 @@ export const useFetch = (url) => {
             data,
           });
         } else {
-          console.log("componente desmontado");
+          //console.log("componente desmontado");
         }
       });
   }, [url]);

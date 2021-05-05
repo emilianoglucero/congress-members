@@ -4,7 +4,6 @@ import { useForm } from "../hooks/useForm";
 import { CongressGrid } from "./ui/CongressGrid";
 
 export const SearchScreen = ({ listOfMembers }) => {
-  console.log(listOfMembers);
   const [filteredSearch, setFilteredSearch] = useState("");
 
   const [formValues, handleInputChange] = useForm({
@@ -25,50 +24,30 @@ export const SearchScreen = ({ listOfMembers }) => {
   } = formValues;
 
   const handleSearch = (e) => {
-    console.log(e);
     e.preventDefault();
 
     if (e.target.name === "search-general") {
-      console.log("searching general");
-      console.log(searchText);
-      console.log(getObjects(listOfMembers, "", searchText));
       setFilteredSearch(getObjects(listOfMembers, "", searchText));
-      console.log(filteredSearch);
     } else if (e.target.name === "search-text-by-id") {
-      console.log("searching id");
-      console.log(searchTextByID);
-      console.log(getObjects(listOfMembers, "id", searchTextByID));
       setFilteredSearch(getObjects(listOfMembers, "id", searchTextByID));
     } else if (e.target.name === "search-text-by-firstname") {
-      console.log("searching name");
-      console.log(searchTextByFirstName);
       setFilteredSearch(
         getObjects(listOfMembers, "first_name", searchTextByFirstName)
       );
     } else if (e.target.name === "search-text-by-lastname") {
-      console.log("searching lastname");
-      console.log(searchTextByLastName);
-      console.log(getObjects(listOfMembers, "last_name", searchTextByLastName));
       setFilteredSearch(
         getObjects(listOfMembers, "last_name", searchTextByLastName)
       );
     } else if (e.target.name === "search-text-by-gender") {
-      console.log("searching gender");
-      console.log(searchTextByGender);
-      console.log(getObjects(listOfMembers, "gender", searchTextByGender));
       setFilteredSearch(
         getObjects(listOfMembers, "gender", searchTextByGender)
       );
     } else if (e.target.name === "search-text-by-party") {
-      console.log("searching party");
-      console.log(searchTextByParty);
-      console.log(getObjects(listOfMembers, "party", searchTextByParty));
       setFilteredSearch(getObjects(listOfMembers, "party", searchTextByParty));
     }
   };
 
   const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
-  console.log(showAdvancedFilters);
 
   return (
     <div>

@@ -4,9 +4,7 @@ import { getObjects } from "../helpers/getObjects";
 import { CongressMemberDetails } from "./ui/CongressMemberDetails";
 
 export const CongressDetailScreen = ({ listOfMembers }) => {
-  console.log(listOfMembers);
   const { congressId } = useParams();
-  console.log(congressId);
   const history = useHistory();
 
   const [congressMemberInfo, setCongressMemberInfo] = useState("");
