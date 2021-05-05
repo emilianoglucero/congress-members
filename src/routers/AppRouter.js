@@ -6,6 +6,7 @@ import { CongressListScreen } from "../components/CongressListScreen";
 
 import { SearchScreen } from "../components/SearchScreen";
 import { useFetch } from "../hooks/useFetch";
+import "../styles/navbar.scss";
 
 export const AppRouter = () => {
   const url = "https://api.propublica.org/congress/v1/102/house/members.json";
@@ -22,7 +23,7 @@ export const AppRouter = () => {
         <div>
           <Router>
             <div>
-              <nav>
+              <nav className="header">
                 <ul>
                   <li>
                     <Link to="/">Home</Link>

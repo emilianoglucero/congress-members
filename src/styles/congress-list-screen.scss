@@ -1,0 +1,15 @@
+.congress-member-card {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  grid-template-areas: "card card card";
+  div {
+    border: 1px solid #c9c9c9;
+    padding: 20px;
+    margin: 20px 0px;
+    p {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
