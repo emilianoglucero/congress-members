@@ -1,13 +1,8 @@
+import { AppRouter } from "./routers/AppRouter";
+import "./styles/app.scss";
+
 function App() {
-  return (
-    <div className="App">
-      <header>
-        <h1>Congress Members</h1>
-      </header>
-      <main></main>
-      <footer></footer>
-    </div>
-  );
+  return <AppRouter />;
 }
 
 export default App;
